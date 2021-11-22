@@ -2226,6 +2226,14 @@
 				AffixName:= ["#% increased Cast Speed"]
 				ILvLList := [2,15,30,40,55,72,83]
 				AffixList := ["of Talent","of Nimbleness","of Expertise","of Legerdemain","of Prestidigitation","of Sortilege","of Finesse"]
+				ILvLListRings := [2]
+				ILvLListAmulets := [2,15,30]
+				if(indexOf(This.Prop.ItemClass,["Amulets"])){
+					ILvLList := ILvLListAmulets
+				}
+				else if(indexOf(This.Prop.ItemClass,["Rings"])){
+					ILvLList := ILvLListRings
+				}
 			}else if (A_Index == 6){
 				Name:="ChaosDOT"
 				AffixName:= ["#% to Chaos Damage over Time Multiplier"]
@@ -2283,7 +2291,6 @@
 			}
 		}
 		return false
-			
 	}
 
 	HasAffix(Name){
